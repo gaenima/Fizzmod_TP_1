@@ -4,10 +4,10 @@ Realizar una función que permita contar la cantidad de vocales que tiene un tex
 
 function contarVocales(texto) {
   var vocales = 0
-  console.log('typeof texto ', typeof texto)
+  
   if(typeof texto == 'string'){
     var mayus = texto.toUpperCase()
-    console.log('mayus ', mayus)
+    
     for( m of mayus){
       if(m == 'A' || m == 'E' || m == 'I' || m == 'O' || m == 'U' ){
         vocales ++
@@ -32,8 +32,48 @@ Crear una función arrow, que devuelva una clase en ES6 que contendrá dos méto
 Crear un propiedad estática contadorInstancias que me indique cuantas instancias hay de esa clase.
 */
 
+
 const crearClase = () => {
-  return
+  
+    return (
+    class Ejercicio3 {
+    static contadorInstancias = 0
+
+    constructor(texto){
+      this.texto = texto
+      Ejercicio3.contadorInstancias++
+    }
+    contadorPalabras(texto){
+      if(typeof texto == 'string'){
+          let trimTexto = texto.trim()
+        if (trimTexto == "") {
+          return 0
+        } else {
+          let palabras = trimTexto.split(" ")
+          let totalPalabras = palabras.length
+          
+        }
+      } 
+      else {
+        return -1
+      }
+      return totalPalabras
+    }
+    hayNumeros(texto){
+      if(typeof texto == 'string'){
+      let re = /[0-9]/gm
+      let result = re.exec(texto)
+      if(texto != null)
+      return true
+      else return false
+      } else {
+        return -1
+      }
+
+    }
+  }
+
+  )
 }
 
 
